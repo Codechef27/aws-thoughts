@@ -15,7 +15,7 @@ const allUsers = JSON.parse(
 
 allUsers.forEach(user => {
     const params = {
-      TableName: "Thoughts",
+      TableName: "thoughts",
       Item: {
         "username": user.username,
         "createdAt": user.createdAt,

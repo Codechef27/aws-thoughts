@@ -7,7 +7,7 @@ const awsConfig = {
 };
 AWS.config.update(awsConfig);
 const dynamodb = new AWS.DynamoDB.DocumentClient();
-const table = 'Thoughts';
+const table = 'thoughts';
 
 router.get('/users', (req, res) => {
     const params = {

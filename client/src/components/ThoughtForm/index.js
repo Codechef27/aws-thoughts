@@ -19,6 +19,20 @@ const ThoughtForm = () => {
   const handleFormSubmit = (event) => {
     event.preventDefault();
 
+    const postThought = async () => {
+      const res = await fetch('/api/users', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formState),
+      });
+      const data = await res.json();
+      console.log(data);
+    };
+    postThought();
+
     // clear form value
     setFormState({ username: "", thought: "" });
     setCharacterCount(0);
